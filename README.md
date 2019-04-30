@@ -4,14 +4,14 @@ This repository will contain the concepts about exploratory data analysis .
 # Structure
 EDA<br/>
 ├── preprocess<br/>
-│   ├── data<br/>
-│   │    └── selected_dataset.csv<br/>
-│   ├── scripts<br/>
-│   │   ├── step1.py<br/>
-│   │   ├── step2.py<br/>
-│   │   └── feature_selector<br/>
-│   │         ├── __init__.py<br/>      
-│   │         └── feature_selector.py<br/>
+&nbsp;│   ├── data<br/>
+&nbsp;│   │    └── selected_dataset.csv<br/>
+&nbsp;│   ├── scripts<br/>
+&nbsp;│   │   ├── step1.py<br/>
+&nbsp;│   │   ├── step2.py<br/>
+&nbsp;│   │   └── feature_selector<br/>
+&nbsp;│   │         ├── __init__.py<br/>      
+&nbsp;│   │         └── feature_selector.py<br/>
 
 <br/>
 ## data folder
