@@ -1,0 +1,21 @@
+,NAME_CONTRACT_TYPE,NAME_TYPE_SUITE,ORGANIZATION_TYPE
+0,Cash loans,Unaccompanied,Business Entity Type 3
+1,Revolving loans,Family,XNA
+2,,"Spouse, partner",Self-employed
+3,,Children,Other
+4,,Other_B,Medicine
+5,,Other_A,Government
+6,,Group of people,Business Entity Type 2
+7,,,School
+8,,,Kindergarten
+9,,,Trade: type 7
+10,,,Construction
+11,,,Business Entity Type 1
+12,,,Transport: type 4
+13,,,Industry: type 3
+14,,,Trade: type 3
+15,,,Housing
+16,,,Industry: type 9
+17,,,Industry: type 11
+18,,,Transport: type 2
+19,,,Bank
