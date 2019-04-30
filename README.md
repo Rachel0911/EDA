@@ -2,16 +2,16 @@
 This repository will contain the concepts about exploratory data analysis .
 
 # Structure
-EDA
-├── preprocess
-│   ├── data
-│   │    └── selected_dataset.csv
-│   ├── scripts
-│   │   ├── step1.py
-│   │   ├── step2.py
-│   │   └── feature_selector
-│   │         ├── __init__.py       
-│   │         └── feature_selector.sh
+EDA<br/>
+├── preprocess<br/>
+│   ├── data<br/>
+│   │    └── selected_dataset.csv<br/>
+│   ├── scripts<br/>
+│   │   ├── step1.py<br/>
+│   │   ├── step2.py<br/>
+│   │   └── feature_selector<br/>
+│   │         ├── __init__.py<br/>      
+│   │         └── feature_selector.py<br/>
 
 <br/>
 ## data folder
@@ -28,6 +28,6 @@ df.to_csv("selected_dataset.csv")<br/>
 1. Deal with high cardinality categorical variables, i.e. zipcode, city.
 2. Deal with missing values(category&number)
 3. Transfer data
-4. Feature selection
-Part1 and part2 are implemented in step1.py. <br/>
-Part3 is implemented in step2.py. <br/>
+4. Feature selection<br/>
+Part1 and part2 are implemented in step1.py.<br/>
+Part3 is implemented in step2.py.<br/>
