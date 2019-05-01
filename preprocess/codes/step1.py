@@ -1,7 +1,5 @@
 import pandas as pd
 
-
-
 def deal_cat_num(df, train_process):
     """Deal with categorical variables and numerical variables with null.
     Especial categorical varibales with null or high cardinality!!!
@@ -10,6 +8,9 @@ def deal_cat_num(df, train_process):
     ----------
     df : DataFrame
         Original dataset
+    train_process : boolean
+                   True: train process
+                   False: test process
 
     Returns
     -------
@@ -25,13 +26,12 @@ def deal_cat_num(df, train_process):
     # This number is the top frequent levels in a categorical variable
     # num_freq = 20 means I just want to remain the first 20 frequent categories.
     # 58 levels in ORGANIZATION_TYPE column after this function, there are 20 levels left.
-    # Since I will use one_hot encoding, it doesn't work well when the levels are high.
+    # Since I will use one_hot encoding, it doesn't work well when the levels are too many.
     num_freq = 20
     # Preprocess category fields, store unique values when train. Since in practice, the test dataset is real_time.
-    # To guarantee train and score have the same column order after one_hot encoding
+    # To guarantee train and test have the same column order after one_hot encoding
     cats = ['NAME_CONTRACT_TYPE','NAME_TYPE_SUITE', 'ORGANIZATION_TYPE']
     df.loc[:, cats] = df[cats].fillna('NONE')
-
     # store unique category values
     if train_process:
         # define a dataframe for unique categirucal values, and then to_csv
@@ -46,17 +46,17 @@ def deal_cat_num(df, train_process):
             catVal = pd.concat([catVal, unique_levels],axis=1)
         catVal.to_csv('../data/unique_cat.csv')
 
-    # READ unique category values for train and test
+    # read unique category values for train and test
     catVal_dic = {}
     catVal = pd.read_csv("../data/unique_cat.csv")
-
+    # since some categorical variables have less than num_freq levels. Storing in unique_cat.csv will use "na" to make each 
+    # columns have 20 rows. Thus need to remove the "na".
     for cat in cats:
         catVal_dic[cat] = list(catVal[cat][~catVal[cat].isnull()])
-
+    # get dummy variables for category columns
     for cat in cats:
         category_values = catVal_dic[cat]
         df[cat] = pd.Categorical(df[cat], category_values, ordered=False)
-    # get dummy variables for category columns
     df_temp = pd.get_dummies(df[cats])
     df = pd.concat([df, df_temp], axis=1)
     # delete original cat columns
@@ -65,7 +65,6 @@ def deal_cat_num(df, train_process):
     # deal with numerical variables with null
     nums = ['DAYS_EMPLOYED', 'OWN_CAR_AGE']
     df[nums] = df[nums].fillna(0.0).astype(float)
-    print(df.isnull().any())
     return df
 
 def main():
