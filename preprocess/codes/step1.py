@@ -49,7 +49,7 @@ def deal_cat_num(df, train_process):
     # read unique category values for train and test
     catVal_dic = {}
     catVal = pd.read_csv("../data/unique_cat.csv")
-    # since some categorical variables have less than num_freq levels. Storing in unique_cat.csv will use "na" to make each 
+    # since some categorical variables have less than num_freq levels. Storing in unique_cat.csv will use "na" to make each
     # columns have 20 rows. Thus need to remove the "na".
     for cat in cats:
         catVal_dic[cat] = list(catVal[cat][~catVal[cat].isnull()])
@@ -70,7 +70,9 @@ def deal_cat_num(df, train_process):
 def main():
     df = pd.read_csv("../data/selected_dataset.csv")
     train_process = True
-    deal_cat_num(df, train_process)
+    df.drop("Unnamed: 0", axis=1, inplace=True)
+    df = deal_cat_num(df, train_process)
+    df.to_csv("../data/deal_cat_num.csv")
 
 if __name__ == "__main__":
     main()
