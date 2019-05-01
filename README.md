@@ -32,4 +32,5 @@ df.to_csv("selected_dataset.csv")<br/>
 Part1 and part2 are implemented in step1.py.<br/>
 Part3 is implemented in step2.py.<br/>
 Part4 is modified from <a href="https://github.com/WillKoehrsen/feature-selector">WillKoehrsen's feature-selector</a>  repository. I forked the whole version.<br/>
+Remove one-hot parameter in WillKoehrsen's feature-selector, since I do one-hot encoding in the step1.py<br/>
 # Thank you WillKoehrsen for offering a perfect repo about feature selection!
