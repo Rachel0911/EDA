@@ -24,7 +24,7 @@ df = pd.read_csv("application_train.csv")<br/>
 df = df.iloc[:10000]<br/>
 df = df[['NAME_CONTRACT_TYPE','NAME_TYPE_SUITE', 'ORGANIZATION_TYPE','DAYS_EMPLOYED','OWN_CAR_AGE']]<br/>
 df.to_csv("selected_dataset.csv")<br/>
-## scripts folder
+## codes folder
 1. Deal with high cardinality categorical variables, i.e. zipcode, city.
 2. Deal with missing values(category&number)
 3. Transform data
