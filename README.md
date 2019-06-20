@@ -1,18 +1,5 @@
 # EDA
 This repository will contain the concepts about exploratory data analysis.
-# Structure
-```
-EDA
-├── preprocess
-│   ├── data
-│   │    └── selected_dataset.csv
-│   ├── scripts
-│   │   ├── step1.py
-│   │   ├── step2.py
-│   │   └── feature_selector
-│   │         ├── __init__.py   
-│   │         └── feature_selector.py
-```
 
 ## data folder
 selected_dataset.csv is a subset of application_train.csv. I just selected the first 10000 rows and 5 columns.<br/>
