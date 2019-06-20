@@ -12,12 +12,7 @@ df = df.iloc[:10000]<br/>
 df = df[['NAME_CONTRACT_TYPE','NAME_TYPE_SUITE', 'ORGANIZATION_TYPE','DAYS_EMPLOYED','OWN_CAR_AGE']]<br/>
 df.to_csv("selected_dataset.csv")<br/>
 ## codes folder
-1. Deal with high cardinality categorical variables, i.e. zipcode, city.
-2. Deal with missing values(category&number)
-3. Transform data
-4. Feature selection<br/>
-Part1 and part2 are implemented in step1.py.<br/>
-Part3 is implemented in step2.py.<br/>
-Part4 is modified from <a href="https://github.com/WillKoehrsen/feature-selector">WillKoehrsen's feature-selector</a>  repository. I forked the whole version.<br/>
-Remove one-hot parameter in WillKoehrsen's feature-selector, since I do one-hot encoding in the step1.py<br/>
+Feature selection<br/>
+Feature selection is modified from <a href="https://github.com/WillKoehrsen/feature-selector">WillKoehrsen's feature-selector</a>  repository. I forked the whole version.<br/>
+
 # Thank you WillKoehrsen for offering a perfect repo about feature selection!
